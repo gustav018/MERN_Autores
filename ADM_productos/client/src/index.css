@@ -1,0 +1,27 @@
+.mb-3.row {
+    background-color: #b6b6b6;
+    padding: 5px;
+    border-top: 1px solid #818080;
+    border-bottom: 1px solid #818080;
+}
+
+li a {
+    list-style: none;
+    color: #000000;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+  
+}
+
+.card-body {
+    align-items: center;
+    align-content: center;
+    align-self: center;
+   
+}
+div.card {
+    border: none;
+}
