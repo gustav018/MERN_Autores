@@ -4,16 +4,17 @@ import axios from "axios"
 import Swal from 'sweetalert2'
 import PropTypes from 'prop-types';
 import FormularioAuthor from "./FormularioAuthor"
+import { useNavigate } from "react-router-dom";
 
-const AuthorForm = ({updateAuthors}) => {
+const AuthorForm = ({ updateAuthors }) => {
 
     const initialValues = {
-        nombre:''
-        
-    }
-    const {values: author, handleChange, clearData} = useForm(initialValues)
-    const [error, setError] = useState("")
+        nombre: ''
 
+    }
+    const { values: author, handleChange, clearData } = useForm(initialValues)
+    const [error, setError] = useState("")
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post('http://localhost:8000/api/author', author)
@@ -25,7 +26,7 @@ const AuthorForm = ({updateAuthors}) => {
                     icon: "success",
                     title: "Genial!",
                     text: "Agregaste un author!!",
-                });
+                }).then(() => navigate("/"));
                 setError("")
             })
             .catch(err => {

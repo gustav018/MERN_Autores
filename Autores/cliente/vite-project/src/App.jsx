@@ -7,26 +7,26 @@ import AuthorFormUpdate from './components/AuthorFormUpdate'
 import DetalleAuthor from './DetalleAuthor'
 import AuthorForm from './components/AuthorForm';
 function App() {
-  const [authors, setAuthors] = useState(null);
+  const [authors, setAuthors] = useState([]);
 
-    const updateAuthors = (author) => {
-        setAuthors([...authors, author])
-    }
+  const updateAuthors = (author) => {
+    setAuthors([...authors, author])
+  }
 
   return (
     <>
-            <div className='container mt-3'>
-              <h1>Favorite Authors</h1>
-                <Routes>
-                    <Route path="/" element={<ListarCrearAuthor />} />
-                    <Route path="/new" element={<AuthorForm updateAuthors={updateAuthors}/>} />
-                    
-                    <Route path="/author/:id" element={<DetalleAuthor />} />
-                    <Route path="/edit/:id/" element={<AuthorFormUpdate />} />
-                </Routes>
-                
-            </div>
-        </>
+      <div className='container mt-3'>
+        <h1>Favorite Authors</h1>
+        <Routes>
+          <Route path="/" element={<ListarCrearAuthor />} />
+          <Route path="/new" element={<AuthorForm updateAuthors={updateAuthors} />} />
+
+          <Route path="/author/:id" element={<DetalleAuthor />} />
+          <Route path="/edit/:id/" element={<AuthorFormUpdate />} />
+        </Routes>
+
+      </div>
+    </>
   )
 }
 
